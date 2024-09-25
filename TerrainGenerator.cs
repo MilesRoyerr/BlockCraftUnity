@@ -1,50 +1,40 @@
 using UnityEngine;
 
-public class TerrainGenerator : MonoBehaviour
+public class ChunkGenerator : MonoBehaviour
 {
     public GameObject blockPrefab;  // Assign your Block prefab here
-    public int width = 10;  // X size of terrain
-    public int depth = 10;  // Z size of terrain
-    public int maxHeight = 20;  // Max height above ground level (surface)
-    public int baseDepth = 60;  // Base layer depth (underground)
-    public float noiseScale = 0.1f;  // Controls terrain smoothness
-    public int randomFactor = 2;  // Extra randomness added to Perlin noise
+    public int chunkWidth = 16;  // Width of the chunk (X direction)
+    public int chunkLength = 16;  // Length of the chunk (Z direction)
+    public int chunkHeight = 384;  // Height of the chunk (Y direction)
+    public int maxSurfaceHeight = 64;  // Max height for the surface terrain
+    public float noiseScale = 0.05f;  // Controls terrain smoothness
     private float seed;  // Random seed for noise variation
 
     void Start()
     {
-        // Generate a random seed so that each terrain is different
-        seed = Random.Range(0f, 100f);
-        GenerateTerrain();
+        // Generate a random seed so that each chunk is different
+        seed = Random.Range(0f, 1000f);
+        GenerateChunk();
     }
 
-    void GenerateTerrain()
+    void GenerateChunk()
     {
-        for (int x = 0; x < width; x++)
+        for (int x = 0; x < chunkWidth; x++)
         {
-            for (int z = 0; z < depth; z++)
+            for (int z = 0; z < chunkLength; z++)
             {
-                // Add randomness to Perlin noise input
-                int perlinHeight = Mathf.FloorToInt(PerlinNoise(x, z) * maxHeight);
+                // Calculate height for the terrain surface using Perlin noise
+                int surfaceHeight = Mathf.FloorToInt(PerlinNoise(x, z) * maxSurfaceHeight);
 
-                // Add random variation on top of Perlin noise
-                int randomHeight = Random.Range(0, randomFactor);
-
-                // Total height with randomness
-                int surfaceHeight = Mathf.Clamp(perlinHeight + randomHeight, 0, maxHeight);
-
-                // First, generate the base depth (underground)
-                for (int y = 0; y < baseDepth; y++)
+                // Generate blocks from the bottom of the chunk (Y = 0) up to the surface height
+                for (int y = 0; y < chunkHeight; y++)
                 {
-                    Vector3 position = new Vector3(x, y, z);
-                    Instantiate(blockPrefab, position, Quaternion.identity);
-                }
-
-                // Then, generate the terrain on top of the base
-                for (int y = baseDepth; y <= baseDepth + surfaceHeight; y++)
-                {
-                    Vector3 position = new Vector3(x, y, z);
-                    Instantiate(blockPrefab, position, Quaternion.identity);
+                    // Below the surface, generate solid blocks
+                    if (y <= surfaceHeight)
+                    {
+                        Vector3 position = new Vector3(x, y, z);
+                        Instantiate(blockPrefab, position, Quaternion.identity);
+                    }
                 }
             }
         }
@@ -52,7 +42,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float PerlinNoise(int x, int z)
     {
-        // Add the seed to the Perlin noise input for randomness
+        // Use seed and noiseScale to generate smooth terrain variation
         return Mathf.PerlinNoise((x + seed) * noiseScale, (z + seed) * noiseScale);
     }
 }
