@@ -26,18 +26,5 @@ Project Structure
 Assets/Scripts: Contains all the C# scripts that handle core gameplay mechanics such as player movement, terrain generation, and interaction with objects.
 Assets/Prefabs: Contains reusable prefabs like the block used for terrain generation.
 Assets/Materials: Holds materials used for visual customization of the environment, such as block colors and textures.
-How to Run
-Clone the repository to your local machine:
-
-bash
-Copy code
-git clone https://github.com/your-username/Blockcraft.git
-Open the project in Unity. Ensure you're using Unity 2021.3.x LTS (or a compatible version) with the 3D Standard template.
-
-Once the project is open, hit Play to test the player movement and terrain generation.
-
-Next Steps & Planned Features
-Block Destruction and Placement: Enable players to interact with the terrain by destroying and placing blocks to build structures.
-Expanded Terrain Features: Add biomes, caves, trees, and water to create a more dynamic and diverse world.
 Day/Night Cycle: Introduce a day-night system that affects lighting and gameplay.
 Multiplayer Support: Allow multiple players to join the same world and collaborate or compete in building and exploring.
