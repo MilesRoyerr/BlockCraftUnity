@@ -2,11 +2,11 @@
 
 
 
-A Minecraft-inspired voxel game built in Unity using the Standard 3D pipeline.
+A Minecraft-inspired voxel game built in Unity using the C# & the Standard 3D Pipeline.
 Overview
-Blockcraft is a voxel-based game inspired by Minecraft, built from scratch in Unity using the Standard 3D pipeline. This project focuses on core gameplay features such as player movement, terrain generation using Perlin noise, and optional interactions with moving platforms. These foundations are designed to be expanded into a full-scale voxel world, supporting exploration, building, and environment interaction.
+Blockcraft is a voxel-based game inspired by Minecraft, built from scratch in Unity using the Standard 3D Pipeline. This project focuses on core gameplay features such as player movement, terrain generation using Perlin noise, and optional interactions with moving platforms. These foundations are designed to be expanded into a full-scale voxel world, supporting exploration, building, and environment interaction.
 
-Features Implemented
+**Features Implemented**
 1. Player Movement
 The player character has a first-person view and is controlled using the keyboard for movement (WASD) and mouse for looking around.
 The player can jump and move across the world, with basic collision detection and ground checking to prevent jumping in mid-air.
