@@ -9,7 +9,7 @@ public class TerrainGenerator : MonoBehaviour
     public int maxSurfaceHeight = 64; 
     public float noiseScale = 0.05f;  
 
-    private float seed; // Random seed for noise variation
+    private float seed; 
 
     void Start()
     {
