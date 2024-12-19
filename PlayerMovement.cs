@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
         cameraPitch = Mathf.Clamp(cameraPitch, -90f, 90f); 
 
         playerCamera.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX); // Rotate player on the Y-axis
+        transform.Rotate(Vector3.up * mouseX); 
     }
 
     void HandleMovement()
