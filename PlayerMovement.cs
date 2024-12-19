@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float moveSpeed = 5f;   // Speed of player movement
+    public float moveSpeed = 5f;   
     public float jumpForce = 5f;   // Jump force
     public float lookSpeed = 2f;   // Mouse look speed
     public Transform playerCamera; // Reference to the camera attached to the player
