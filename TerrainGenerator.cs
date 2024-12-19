@@ -37,7 +37,7 @@ public class TerrainGenerator : MonoBehaviour
 
     float PerlinNoise(int x, int z)
     {
-        // Use seed and noiseScale to generate smooth terrain variation
+        
         return Mathf.PerlinNoise((x + seed) * noiseScale, (z + seed) * noiseScale);
     }
 }
