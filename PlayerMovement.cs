@@ -4,7 +4,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public float moveSpeed = 5f;   
     public float jumpForce = 5f;  
-    public float lookSpeed = 2f;   // Mouse look speed
+    public float lookSpeed = 2f;   
     public Transform playerCamera; // Reference to the camera attached to the player
 
     private Rigidbody rb;
