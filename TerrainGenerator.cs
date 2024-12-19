@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class TerrainGenerator : MonoBehaviour
 {
-    public GameObject blockPrefab;  // Assign your block prefab here
+    public GameObject blockPrefab;  
     public int chunkWidth = 16;     // Width of the chunk (X direction)
     public int chunkLength = 16;    // Length of the chunk (Z direction)
     public int chunkHeight = 384;   // Height of the chunk (Y direction)
