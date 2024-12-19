@@ -7,7 +7,7 @@ public class TerrainGenerator : MonoBehaviour
     public int chunkLength = 16;   
     public int chunkHeight = 384;   
     public int maxSurfaceHeight = 64; 
-    public float noiseScale = 0.05f;  // Controls the terrain smoothness
+    public float noiseScale = 0.05f;  
 
     private float seed; // Random seed for noise variation
 
