@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         float mouseY = Input.GetAxis("Mouse Y") * lookSpeed;
 
         cameraPitch -= mouseY;
-        cameraPitch = Mathf.Clamp(cameraPitch, -90f, 90f); // Clamp up/down look
+        cameraPitch = Mathf.Clamp(cameraPitch, -90f, 90f); 
 
         playerCamera.localRotation = Quaternion.Euler(cameraPitch, 0f, 0f);
         transform.Rotate(Vector3.up * mouseX); // Rotate player on the Y-axis
