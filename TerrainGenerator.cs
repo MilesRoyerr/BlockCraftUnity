@@ -25,7 +25,6 @@ public class TerrainGenerator : MonoBehaviour
             {
                 int surfaceHeight = Mathf.FloorToInt(PerlinNoise(x, z) * maxSurfaceHeight);
 
-                // Generate blocks up to the surfaceHeight only
                 for (int y = 0; y <= surfaceHeight; y++)
                 {
                     Vector3 position = new Vector3(x, y, z);
