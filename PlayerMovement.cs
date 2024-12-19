@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked; // Lock the mouse cursor
+        Cursor.lockState = CursorLockMode.Locked; 
     }
 
     void Update()
