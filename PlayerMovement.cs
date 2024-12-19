@@ -54,6 +54,6 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
-        return Physics.Raycast(transform.position, Vector3.down, 1.1f); // Raycast to check if grounded
+        return Physics.Raycast(transform.position, Vector3.down, 1.1f); 
     }
 }
