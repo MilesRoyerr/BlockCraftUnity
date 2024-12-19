@@ -13,7 +13,7 @@ public class TerrainGenerator : MonoBehaviour
 
     void Start()
     {
-        seed = Random.Range(0f, 1000f); // Random seed for chunk variety
+        seed = Random.Range(0f, 1000f); 
         GenerateChunk();
     }
 
